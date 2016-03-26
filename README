@@ -1,0 +1,54 @@
+Compilation:
+
+Linux + g++:
+  just 'make', optionally: 'make depend'.
+  You will get TelescopeServerDummy and TelescopeServerLx200
+
+Solaris,BSD,Hpux,...
+  should be similas to Linux, perhaps slight modification required.
+  Help is welcome.
+
+WIN32 + mingw-g++-crosscompiler:
+  optionally: 'make depend' as above,
+  export the path to your crosscompiler like
+  'export CROSS_GPP=/usr/local/mingw/i386-mingw32/bin/g++',
+  then 'make exe'.
+  You will get TelescopeServerDummy.exe and TelescopeServerLx200.exe
+
+---------------------
+Usage examples:
+
+> TelescopeServerDummy 10000
+starts the dummy server listening on port 10000
+
+> TelescopeServerLx200 10001 /dev/ttyS0
+starts the Lx200 server listening on port 10001 and controlling
+the Meade Lx200 telescope on /dev/ttyS0
+
+---------------------
+
+Other telescopes:
+
+Any developer who wants to extend this library for using of his
+telescope is welcome. Escpecially interresting would be the integration
+of this library and of existing telescope libraries (indi,ascom,whatever)
+in order to produce general purpose telescope server programs.
+
+Or you could easily build your own telescope server program entirely
+from scratch and take this library just as an example and a proof of concept
+for the stellarium TCP telescope protocol.
+
+---------------------
+
+GENERATING DOCUMENTATION
+========================
+
+A documentation can be autmatically generated with Doxygen.
+
+Just run
+> doxygen Doxyfile
+in the main directory. The output files will be generated in the /doc directory.
+The default output format is HTML, so the starting point is /doc/html/index.html
+Different formats and other options can be set by editing /Doxyfile.
+-- Bogdan Marinov
+

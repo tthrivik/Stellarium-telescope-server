@@ -1,0 +1,27 @@
+Stellarium and RTS2
+
+Remote Telescope System, 2nd version (http://rts2.org) provides open-source
+drivers for a wide range of various observatory instruments, including
+telescopes. It provides XMl-RPC interface, which you can use to comunicate with
+all telescopes running RTS2.
+
+To compile TelescopeServerRTS2, you will need to get a custom version of
+XMLRPClib, which lives in RTS2. Get it using:
+
+svn co https://rts-2.svn.sf.net/svnroot/rts-2/trunk/rts-2
+
+, follow INSTALL instructions to and get libxmlrpc.a compiled.
+
+Then in your shell you type:
+# export XMLRPCPP=/pathtoxmlrpclib++_from_rts2
+and you should be able to compile it like this:
+# make TelescopeServerRTS2
+
+You then run server with two parameters, first is port on which it will listen,
+which you will fill into Stellarium .ini file. Second parameter is XML-RPC URL,
+in form:
+
+http://user:password@host:port
+
+In doubts, please contact author at petr (at) kubanek (dot) net, or visit
+http://rts2.org.
